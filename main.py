@@ -15,11 +15,6 @@ def imdb_top(imdb_top_n):
     for m in source.findAll("div", class_="lister-item mode-advanced"):
         print("\n%d."%index + m.h3.a.text +"(%s)"%year)
         print("IMDB Rating: %s"%m.strong.text)
-        #+m.find("span",attrs={"class":"genre"}).text+"IMDb Rating-"+m.strong.text)  # movie's name
         index=index+1
-        #print(m.find("span", attrs={"class": "genre"}).text + "IMDb rating-")  # genre
-        #print(m.strong.text)  # movie's rating
-        #print(f"https://www.imdb.com{m.a.get('href')}")  # movie's page link
-        #print("*" * 40)
 if __name__ == "__main__":
     imdb_top(input("Enter the number of Movies required: "))
